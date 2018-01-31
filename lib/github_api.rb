@@ -138,7 +138,7 @@ class GithubApi
     @_client ||= Octokit::Client.new(access_token: token, auto_paginate: true)
   end
 
-  def create_status(repo:, sha:, state:, description:, target_url: nil)
+  def create_status(repo:, sha:, state:, description:, target_url: "https://#{ENV["HOST"]}/builds/#{sha}")
     client.create_status(
       repo,
       sha,

@@ -1,23 +1,24 @@
 # frozen_string_literal: true
 class HoundConfig
   LINTERS = {
-    Linter::CoffeeScript => { default: true },
-    Linter::Credo => { default: false },
-    Linter::Eslint => { default: false },
-    Linter::Flog => { default: false },
-    Linter::Go => { default: true },
-    Linter::Haml => { default: true },
-    Linter::Jshint => { default: true },
-    Linter::Flake8 => { default: false },
-    Linter::Reek => { default: false },
-    Linter::Remark => { default: false },
-    Linter::Ruby => { default: true },
-    Linter::SassLint => { default: false },
-    Linter::Scss => { default: true },
-    Linter::SlimLint => { default: false },
-    Linter::Stylelint => { default: false },
-    Linter::Swift => { default: true },
-    Linter::Tslint => { default: false },
+    # Linter::CoffeeScript => { default: true },
+    # Linter::Credo => { default: false },
+    # Linter::Eslint => { default: false },
+    # Linter::Flog => { default: false },
+    # Linter::Go => { default: true },
+    # Linter::Haml => { default: true },
+    # Linter::Jshint => { default: true },
+    Linter::Keycomb => { default: true, fail_on_violations: true },
+    # Linter::Flake8 => { default: false },
+    # Linter::Reek => { default: false },
+    # Linter::Remark => { default: false },
+    # Linter::Ruby => { default: true },
+    # Linter::SassLint => { default: false },
+    # Linter::Scss => { default: true },
+    # Linter::SlimLint => { default: false },
+    # Linter::Stylelint => { default: false },
+    # Linter::Swift => { default: true },
+    # Linter::Tslint => { default: false },
   }.freeze
   CONFIG_FILE = ".hound.yml"
 
@@ -35,7 +36,8 @@ class HoundConfig
   end
 
   def fail_on_violations?
-    !!content["fail_on_violations"]
+    true
+    # !!content["fail_on_violations"]
   end
 
   private

@@ -19,6 +19,34 @@
             %span Latest commit
             %strong
               = build.commit_sha[0..6]
+        .build-meta
+          %h3.build-pull-request
+            %span
+              Status:
+              - if build.completed? && build.violations.any?
+                %strong Failed
+              - elsif build.completed?
+                %strong Succeeded
+              - else
+                %strong Pending
+        - if build.completed? && build.violations.any?
+          .build-meta
+            %h2.build-pull-request
+              %strong Violations:
+          .build-meta
+            %ul
+              - build.violations.each do |violation|
+                = content_tag_for :li, violation do
+                  %span
+                    %strong
+                      = violation.filename
+                  %ul
+                    - violation.messages.each do |msg|
+                      %li
+                        Line
+                        = violation.line_number
+                        \:
+                        = msg
         = form_for :rebuild, url: repo_rebuilds_path(build.repo) do |form|
           = form.hidden_field :pull_request_number,
             value: build.pull_request_number

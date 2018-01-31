@@ -14,6 +14,10 @@ class BuildsController < ApplicationController
     head :ok
   end
 
+  def show
+    render locals: { builds: build_by_commit_array }, template: "builds/index"
+  end
+
   private
 
   def force_https?
@@ -40,5 +44,11 @@ class BuildsController < ApplicationController
 
   def recent_builds_by_repo
     RecentBuildsByRepoQuery.call(user: current_user)
+  end
+
+  def build_by_commit_array
+    build = Build.find_by(commit_sha: params[:id], user: current_user)
+    return [build] if build
+    []
   end
 end

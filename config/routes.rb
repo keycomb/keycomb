@@ -17,7 +17,7 @@ Houndapp::Application.routes.draw do
   get "/faq", to: "pages#show", id: "faq"
 
   resource :account, only: [:show, :update]
-  resources :builds, only: [:create, :index]
+  resources :builds, only: [:create, :index, :show]
   resources :owners, only: [:update]
   resources :plans, only: [:index]
   resources :deleted_subscriptions, only: [:create]
