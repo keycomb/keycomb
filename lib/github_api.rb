@@ -98,7 +98,7 @@ class GithubApi
     )
   end
 
-  def create_error_status(full_repo_name, sha, description, target_url: "https://#{ENV["HOST"]}/builds/#{sha}")
+  def create_error_status(full_repo_name, sha, description, target_url = nil)
     create_status(
       repo: full_repo_name,
       sha: sha,
@@ -138,14 +138,14 @@ class GithubApi
     @_client ||= Octokit::Client.new(access_token: token, auto_paginate: true)
   end
 
-  def create_status(repo:, sha:, state:, description:, target_url: "https://#{ENV["HOST"]}/builds/#{sha}")
+  def create_status(repo:, sha:, state:, description:, target_url: nil)
     client.create_status(
       repo,
       sha,
       state,
       context: "keycomb",
       description: description,
-      target_url: target_url
+      target_url: "https://#{ENV["HOST"]}/builds/#{sha}"
     )
   end
 
