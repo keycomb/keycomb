@@ -1,15 +1,13 @@
 %nav.app-nav{ role: "navigation" }
   .app-nav__container
     = link_to repos_path, class: "line-height-zero" do
-      %svg.logo.app-nav__logo{ role: "img" }
-        %title Hound
-        %use{ "xlink:href" => "/images/icons.svg#hound" }
+      %h1 KEYCOMB
 
     .app-nav__app-items
       = link_to "Docs", configuration_path, class: "app-nav__item"
 
       = link_to "FAQ",
-        "https://intercom.help/hound/frequently-asked-questions",
+        "https://github.com/keycomb/keycomb-dot-co/blob/master/FAQ.md",
         class: "app-nav__item"
 
       - unless signed_in?

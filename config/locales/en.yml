@@ -12,12 +12,12 @@ en:
   stop_masquerading: "Stop Masquerading"
   active_repos: "Active repos"
   search_placeholder: "Search by repo"
-  pending_status: "Keycomb is busy reviewing changes..."
+  pending_status: "Keycomb is busy combing changes..."
   cannot_activate_repo: "Only repo admins can activate"
   complete_status:
-    zero: "No violations found. Woof!"
-    one: "1 violation found."
-    other: "%{count} violations found."
+    zero: "No secrets found. Profit!"
+    one: "1 secret found."
+    other: "%{count} secrets found."
   config_error_status:
     "Error parsing config for: %{linter_name}. Click \"details\" for
     assistance."
@@ -28,23 +28,21 @@ en:
       invalid: "Email is invalid"
 
   onboarding:
-    title: "Let's keep that code in style:"
-    step_one_title: "Activate Hound on a repo."
-    step_one_alt_title: "Hound is active on %{count} of your repos!"
+    title: "Let's keep that code secure:"
+    step_one_title: "Activate Keycomb on a repo."
+    step_one_alt_title: "Keycomb is active on %{count} of your repos!"
     step_one_desc:
-      "Hound watches for pull requests on all active repos.
+      "Keycomb watches for pull requests on all active repos.
       Activating public repos is free; private repos are priced by tier."
     step_one_link: "Details"
     step_two_title: "Open a GitHub pull request on the active repo."
     step_two_desc:
-      "Hound will review all GitHub pull requests that are
-      opened on an activated repo for violations of your style
-      guide."
-    step_three_title: "Hound comments on your pull request."
+      "Keycomb will review all GitHub pull requests that are
+      opened on an activated repo for exposed secrets"
+    step_three_title: "Keycomb provides feedback."
     step_three_desc:
-      "If Hound finds any violations of your style guide it will
-      comment inline on the violation in your GitHub pull
-      request."
+      "If Keycomb finds any exposed secrets, the private link provided in the
+      commit status will show you the offending lines."
 
   plans:
     open_source:
@@ -65,8 +63,7 @@ en:
 
   home:
     index:
-      title: "GitHub Code Review Tool for JS, Ruby, Swift, and more"
+      title: "GitHub Code Scanner Tool for JS, Ruby, Swift, and more"
       description:
-        "Hound is the GitHub code review tool the thoughtbot team wanted but
-        never got, so they built it. You can use it too. Now checking Ruby, JS,
-        Swift, CoffeeScript, Go, Elixir and more."
+        "Keycomb scans pull requests to prevent adding secrets into your git
+        repositories. Protecting you and protecting your customers."

@@ -3,7 +3,7 @@
   %head
     %meta{ content: "width=device-width,initial-scale=1", name: "viewport" }
     %title
-      = [content_for(:page_title), "Hound"].compact.uniq.join(" - ")
+      = [content_for(:page_title), "Keycomb"].compact.uniq.join(" - ")
     - if content_for? :meta_description
       %meta{ content: content_for(:meta_description) }
     = stylesheet_link_tag    "application", :media => "all"
