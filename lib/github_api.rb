@@ -98,7 +98,7 @@ class GithubApi
     )
   end
 
-  def create_error_status(full_repo_name, sha, description, target_url = nil)
+  def create_error_status(full_repo_name, sha, description, target_url: "https://#{ENV["HOST"]}/builds/#{sha}")
     create_status(
       repo: full_repo_name,
       sha: sha,
@@ -114,7 +114,7 @@ class GithubApi
     if repo_invitation
       accept_repository_invitation(repo_invitation)
     else
-      raise "Invitation for Hound to #{repo_name} not found"
+      raise "Invitation for Keycomb to #{repo_name} not found"
     end
   end
 
@@ -143,7 +143,7 @@ class GithubApi
       repo,
       sha,
       state,
-      context: "hound",
+      context: "keycomb",
       description: description,
       target_url: target_url
     )
