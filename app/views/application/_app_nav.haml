@@ -1,7 +1,7 @@
 %nav.app-nav{ role: "navigation" }
   .app-nav__container
     = link_to repos_path, class: "line-height-zero" do
-      %h1 KEYCOMB
+      = image_tag "home-page/logo_name.png", width: 200
 
     .app-nav__app-items
       = link_to "Docs", configuration_path, class: "app-nav__item"

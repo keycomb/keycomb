@@ -20,7 +20,8 @@ $black: #000;
 $gold: rgb(226, 206, 0);
 $green: rgb(132, 240, 156);
 $light-gray: rgb(230, 230, 230);
-$purple: rgb(168, 115, 209);
+// $purple: rgb(168, 115, 209);
+$purple: rgb(70,145,120);
 $red: rgb(255, 123, 123);
 $white: #fff;
 
@@ -33,8 +34,10 @@ $base-accent-color: $purple;
 $base-secondary-color: lighten($purple, 10%);
 $code-background-color: rgba(#99abc0, 0.25);
 
-$home-gradient-top: rgb(196, 115, 209);
-$home-gradient-bottom: rgb(153, 115, 209);
+$home-gradient-top: $purple;
+// $home-gradient-top: rgb(196, 115, 209);
+$home-gradient-bottom: rgb(139,192,111);
+// $home-gradient-bottom: rgb(153, 115, 209);
 
 $small-screen-size: 540px;
 $medium-screen-size: 760px;
