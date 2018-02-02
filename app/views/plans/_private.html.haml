@@ -1,5 +1,9 @@
 .plan
   %h5.plan-title= plan.title
   .plan-allowance
-    = t(".allowance_html", allowance: plan.allowance)
+    - if plan.allowance > 50
+      %strong Unlimited
+      Repos
+    - else
+      = t(".allowance_html", allowance: plan.allowance)
   .plan-price= t(".price_html", price: plan.price)

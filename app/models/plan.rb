@@ -3,9 +3,9 @@ class Plan
 
   PLANS = [
     { id: "basic", price: 0, range: 0..0, title: "Open Comber" },
-    { id: "tier1", price: 49, range: 1..4, title: "Lite Comber" },
-    { id: "tier2", price: 99, range: 5..10, title: "Comber" },
-    { id: "tier3", price: 249, range: 11..30, title: "Large Comber" },
+    { id: "tier1", price: 29, range: 1..10, title: "Lite Comber" },
+    { id: "tier2", price: 99, range: 11..50, title: "Comber" },
+    { id: "tier3", price: 299, range: 51..1000000, title: "Large Comber" },
   ].freeze
 
   attr_reader :id, :price, :title
