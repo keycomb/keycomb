@@ -56,12 +56,14 @@ class RepoActivator
   end
 
   def remove_hound_from_repo
-    github.remove_collaborator(repo.name, Hound::GITHUB_USERNAME)
+    true
+    # github.remove_collaborator(repo.name, Hound::GITHUB_USERNAME)
   end
 
   def add_hound_to_repo
-    github.add_collaborator(repo.name, Hound::GITHUB_USERNAME)
-    hound_github.accept_invitation(repo.name)
+    true
+    # github.add_collaborator(repo.name, Hound::GITHUB_USERNAME)
+    # hound_github.accept_invitation(repo.name)
   end
 
   def hound_github
