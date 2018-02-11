@@ -7,18 +7,27 @@
     .clearfix
       .home-hero
         %h1.home-hero-heading
-          Secret keys in your code could put you and your customers
+          Secret keys in your repos could put you and your customers
           at serious risk
         %p.home-hero-subheading
-          Protect yourself from a security breach with keycomb
+          Keycomb is a code scanning tool for GitHub repos.
+          %br
+          Keycomb scans commits pushed to GitHub to ensure  application keys or
+          %br
+          secrets accidently added during development are caught immediately.
+        %br
+
+        -# .home-hero-cta
+          = link_to "/auth/github",
+            class: "button button--primary button--large" do
+            %svg.icon.button__icon{ "aria-hidden" => "true" }
+              %use{ "xlink:href" => "/images/icons.svg#github" }
+            = t("authenticate")
 
         .home-hero-cta
-          %p.home-hero-subheading
-            - if flash["whitelisted"]
+          - if flash["whitelisted"]
+            %p.home-hero-subheading
               = flash["whitelisted"]
-            - else
-              Request early access today
-          %br
           = form_tag("/onboard", method: "POST") do |f|
             = email_field :user, :email, placeholder: "Email", size: 25, style: "font-size: 1.5em; margin-bottom: 20px"
             %br
@@ -26,34 +35,23 @@
 
 %section
   %section.value
-    .section-content#how-it-works
+    .section-content
       %article.value-section
         .value-text
           %h2.home-heading--large
             How it works.
-          %br
-          %br
           %p
-            1. Sign up with Github and activate keycomb on your repos
-          %br
-          %br
-          %p
-            2. Push code as usual, if there is an exposed secret, keycomb will
-            display a commit status warning you
-          %br
-          %br
-          = image_tag "home-page/keycomb_warning.jpg", class: "value-image"
-          %br
-          %br
-          %p
-            3. Secure your code by expiring the secret and rest assured that your code is safe!
-          %br
-          %br
-          %p
-            Want to know more? Read our
-            = link_to "Documentation", "/configuration"
+            Keycomb integrates with your existing workflow by reviewing
+            code the moment a commit is pushed to GitHub on any branch or pull request.
+            A commit status will let you know if your code is good to go
+            or if a secret has been found.
 
-  -# .home-languages
+        = image_tag "home-page/keycomb_success.jpg", class: "value-image"
+        %br
+        %br
+        = image_tag "home-page/keycomb_warning.jpg", class: "value-image"
+
+  .home-languages
     %h2.home-heading--small.home-languages-heading Currently scanning these languages and more!
 
     .clearfix

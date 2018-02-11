@@ -4,6 +4,8 @@
       = image_tag "home-page/logo_name.png", width: 200
 
     .app-nav__app-items
+      = link_to "Docs", configuration_path, class: "app-nav__item"
+
       =# link_to "FAQ",
         "https://github.com/keycomb/keycomb-dot-co/blob/master/FAQ.md",
         class: "app-nav__item"
@@ -46,10 +48,9 @@
         - else
           = link_to t("sign_out"), sign_out_path, class: "app-nav__item"
 
-      -# else
-        Already a user?&nbsp;
-        = link_to 'Log In', "/auth/github"
-        -# = link_to "/auth/github", class: "button " do
+      - else
+        Already on-boarded?&nbsp;
+        = link_to "/auth/github", class: "button " do
           %svg.icon.button__icon{ "aria-hidden" => "true" }
             %use{ "xlink:href" => "/images/icons.svg#github" }
           = t("authenticate")

@@ -8,8 +8,7 @@
       Plans
 
     - @account_page.plans.each do |plan|
-      - if plan.allowance > 100
-      - elsif plan.allowance < 1
+      - if plan.allowance > 100 || plan.allowance < 1
       - else
         = render("shared/plan_vertical",
             allowance: plan.allowance,
