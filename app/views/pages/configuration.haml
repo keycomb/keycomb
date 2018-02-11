@@ -7,11 +7,35 @@
     %article.docs-article
       %h1 Documentation
       %p
-        Want to keep your application secrets from getting out?
+        Keycomb is simple to integrate. Once you have been rolled onto the platform,
+        you simply
+        click the "Activate" button next to the repo you would like Keycomb to
+        scan.
+      %p
+        Keycomb never has a fully copy of your codebase. Once activated on a repo,
+        when a developer pushes a commit (or commits) to that repo we are notified via a Github
+        event. This event lets us know a new commit is available to scan. Keycomb
+        then grabs the commit's diff (i.e. only the lines of code that have been
+        modified or added since the previous commit)
+        and scans the diff for exposed secrets. Keycomb then posts a commit status
+        back to GitHub
+        to notify you and your team the status of the commit. You can then click on the status' "Details"
+        link to be taken to a private page to view file and line numbers of any
+        secrets Keycomb found. After each scan, your commit diff is garbage collected
+        from memory. None of your code is ever persisted, only
+        file names and line numbers.
+
+      = image_tag "home-page/keycomb_success.jpg", class: "value-image"
+      %br
+      %br
+      = image_tag "home-page/keycomb_warning.jpg", class: "value-image"
+
+      %br
+      %br
 
       %p
-        Sign in with GitHub and activate your repos, that's it!
-        Keycomb will do the rest on each pull request
+        Keycomb was designed to be unintrusive. However, if you would like full
+        code scans contact us at #{mail_to "support@keycomb.co"}.
 
       %p
         If this page doesn't help you find what you are looking for,

@@ -28,21 +28,21 @@ en:
       invalid: "Email is invalid"
 
   onboarding:
-    title: "Let's keep that code secure:"
-    step_one_title: "Activate Keycomb on a repo."
+    title: "Dashboard"
+    step_one_title: "Activate keycomb on a repo"
     step_one_alt_title: "Keycomb is active on %{count} of your repos!"
     step_one_desc:
-      "Keycomb watches for pull requests on all active repos.
-      Activating public repos is free; private repos are priced by tier."
-    step_one_link: "Details"
-    step_two_title: "Open a GitHub pull request on the active repo."
+      "Once activated, keycomb will only scan new commits. If you would like a full code scan please
+      email us at support@keycomb.co."
+    step_one_link: ""
+    step_two_title: "Push code as usual"
     step_two_desc:
-      "Keycomb will review all GitHub pull requests that are
-      opened on an activated repo for exposed secrets"
-    step_three_title: "Keycomb provides feedback."
+      " If there is an exposed secret on an active repo, keycomb will display a
+      commit status with the number of secrets found and private link to details
+      of the offending lines."
+    step_three_title: "Expire exposed secrets"
     step_three_desc:
-      "If Keycomb finds any exposed secrets, the private link provided in the
-      commit status will show you the offending lines."
+      "Secure your code by expiring the secret and rest assured that your code is safe!"
 
   plans:
     open_source:

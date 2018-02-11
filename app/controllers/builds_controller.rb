@@ -47,7 +47,8 @@ class BuildsController < ApplicationController
   end
 
   def build_by_commit_array
-    build = Build.find_by(commit_sha: params[:id], user: current_user)
+    # todo: scope to org?
+    build = Build.find_by(commit_sha: params[:id])
     return [build] if build
     []
   end

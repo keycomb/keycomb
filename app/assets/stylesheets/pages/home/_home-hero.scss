@@ -1,3 +1,9 @@
+.home-hero-background {
+  background: $purple
+              linear-gradient(160deg, $home-gradient-top, $home-gradient-bottom);
+  color: $white;
+}
+
 .home-hero {
   padding: ($base-spacing * 2) $base-spacing $large-spacing;
 

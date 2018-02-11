@@ -1,8 +1,8 @@
 .value {
-  padding: $large-spacing $base-spacing ($large-spacing * 2);
+  padding: $large-spacing $base-spacing ($large-spacing * 1);
 
   @include media($large-screen-up) {
-    padding: ($large-spacing * 2) 0 ($large-spacing * 3);
+    padding: ($large-spacing * 2) 0 ($large-spacing * 2);
   }
 }
 

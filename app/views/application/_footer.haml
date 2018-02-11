@@ -1,5 +1,8 @@
 %footer.app-footer{ role: "contentinfo" }
   %nav.app-footer__nav
+    = link_to "Documentation",
+      configuration_path,
+      class: "app-footer__nav-link"
     = link_to "Source Code",
       "https://github.com/keycomb/keycomb-dot-co/blob/master/SOURCECODE.md",
       class: "app-footer__nav-link"

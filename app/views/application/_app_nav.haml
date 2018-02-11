@@ -4,13 +4,20 @@
       = image_tag "home-page/logo_name.png", width: 200
 
     .app-nav__app-items
-      = link_to "Docs", configuration_path, class: "app-nav__item"
-
-      = link_to "FAQ",
+      =# link_to "FAQ",
         "https://github.com/keycomb/keycomb-dot-co/blob/master/FAQ.md",
         class: "app-nav__item"
 
+      - if signed_in?
+        = link_to "Repos",
+          "/repos",
+          class: "app-nav__item"
+
       - unless signed_in?
+        = link_to "How It Works",
+          root_path(anchor: "how-it-works"),
+          class: "app-nav__item"
+
         = link_to "Pricing",
           root_path(anchor: "pricing"),
           class: "app-nav__item"
@@ -19,7 +26,7 @@
       - if signed_in?
         - if current_user.subscriptions.count > 0
           .allowance{ "data-role" => "allowance-container" }
-            Private Repos
+            Repos
             %strong
               %span{ "data-role" => "subscribed-repo-count" }
                 #{current_user.subscribed_repos.count}
@@ -27,11 +34,9 @@
               %span{ "data-role" => "tier-allowance" }
                 #{current_user.plan_max}
 
-        = link_to account_path, class: "app-nav__item app-nav__account-link" do
-          - if current_user.email.present?
-            .avatar.margin-right-x-small
-              = image_tag avatar_url(current_user), alt: ""
-          = current_user.username
+        - if current_user.has_active_repos?
+          = link_to account_path, class: "app-nav__item app-nav__account-link" do
+            Account
 
         - if masquerading?
           = link_to t("stop_masquerading"),
@@ -41,8 +46,10 @@
         - else
           = link_to t("sign_out"), sign_out_path, class: "app-nav__item"
 
-      - else
-        = link_to "/auth/github", class: "button " do
+      -# else
+        Already a user?&nbsp;
+        = link_to 'Log In', "/auth/github"
+        -# = link_to "/auth/github", class: "button " do
           %svg.icon.button__icon{ "aria-hidden" => "true" }
             %use{ "xlink:href" => "/images/icons.svg#github" }
           = t("authenticate")

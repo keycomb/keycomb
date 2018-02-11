@@ -11,6 +11,8 @@ Houndapp::Application.routes.draw do
   mount Resque::Server, at: "/queue"
   mount JasmineRails::Engine => "/specs" if defined?(JasmineRails)
 
+  post "/onboard", to: "home#onboard"
+
   get "/auth/github/callback", to: "sessions#create"
   get "/sign_out", to: "sessions#destroy"
   get "/configuration", to: "pages#configuration"
