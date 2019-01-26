@@ -21,12 +21,6 @@ export default class Organization extends React.Component {
         <header className="organization-header">
           <h2 className="organization-header-title">{name}</h2>
 
-          <OrganizationConfiguration
-            enabled={configEnabled}
-            id={ownerId}
-            repo={configRepo}
-            repos={repos}
-          />
         </header>
         <section className="repo_listing">
           <RepoList
@@ -40,3 +34,10 @@ export default class Organization extends React.Component {
     );
   }
 }
+
+// <OrganizationConfiguration
+//  enabled={configEnabled}
+//  id={ownerId}
+//  repo={configRepo}
+//  repos={repos}
+// />
