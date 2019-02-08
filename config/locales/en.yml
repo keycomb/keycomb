@@ -33,7 +33,7 @@ en:
     step_one_alt_title: "Keycomb is active on %{count} of your repos!"
     step_one_desc:
       "Once activated, keycomb will only scan new commits. If you would like a full code scan please
-      email us at support@keycomb.co."
+      email us at support@keycomb.io."
     step_one_link: ""
     step_two_title: "Push code as usual"
     step_two_desc:
